@@ -33,3 +33,14 @@ This project demonstrates the three main rendering modes in Next.js 15:
 1.  Navigate to `/about`. Note the "BUILD TIMESTAMP". Refresh. It stays the same.
 2.  Navigate to `/dashboard`. Note the timestamp. Refresh. It updates *every time*.
 3.  Navigate to `/breaking-news`. Note the "Generated At" time. Refresh immediately (it stays). Wait 60s, refresh again (it updates).
+
+
+
+
+
+
+
+
+
+
+
