@@ -2,64 +2,64 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+    <div className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
+      <div className="max-w-4xl mx-auto space-y-8 animate-[fadeIn_1s_ease-out]">
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tight">
+          Rendering Modes <br />
+          <span className="text-gradient">Demonstrated</span>
+        </h1>
+
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          Welcome to the DailyEdge engineering demo. We are showcasing three different rendering strategies in Next.js 15:
+          <span className="text-white font-semibold"> Static (SSG)</span>,
+          <span className="text-blue-400 font-semibold"> Dynamic (SSR)</span>, and
+          <span className="text-purple-400 font-semibold"> Hybrid (ISR)</span>.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          {/* Card 1: Static */}
+          <a href="/about" className="group relative p-6 rounded-2xl glass-panel hover:bg-white/5 transition-all duration-300 hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-800/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative">
+              <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-gray-700 transition-colors">
+                <svg className="w-6 h-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Static (SSG)</h3>
+              <p className="text-sm text-gray-500">Pre-rendered at build time. Ultra fast, best for static content.</p>
+            </div>
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+
+          {/* Card 2: Dynamic */}
+          <a href="/dashboard" className="group relative p-6 rounded-2xl glass-panel hover:bg-blue-900/10 transition-all duration-300 hover:scale-105 border-blue-500/20 hover:border-blue-500/50">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative">
+              <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-800/50 transition-colors">
+                <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-blue-400">Dynamic (SSR)</h3>
+              <p className="text-sm text-gray-500">Generated on every request. Perfect for personalized data.</p>
+            </div>
+          </a>
+
+          {/* Card 3: Hybrid */}
+          <a href="/breaking-news" className="group relative p-6 rounded-2xl glass-panel hover:bg-purple-900/10 transition-all duration-300 hover:scale-105 border-purple-500/20 hover:border-purple-500/50">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative">
+              <div className="w-12 h-12 bg-purple-900/30 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-purple-800/50 transition-colors">
+                <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-purple-400">Hybrid (ISR)</h3>
+              <p className="text-sm text-gray-500">Static with periodic updates. Best of both worlds.</p>
+            </div>
           </a>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
