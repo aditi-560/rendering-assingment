@@ -2,7 +2,12 @@
 export const dynamic = 'force-dynamic';
 
 async function getData() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users/1', { cache: 'no-store' });
+    const res = await fetch('https://jsonplaceholder.typicode.com/users/1', {
+        cache: 'no-store',
+        headers: {
+            'Authorization': `Bearer ${process.env.API_KEY}`
+        }
+    });
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }

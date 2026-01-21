@@ -15,7 +15,11 @@ async function getNews() {
     // but JSONPlaceholder is static. 
     // Instead, I'll return the posts and ANY random data I generate here will be cached for 60s.
 
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5', {
+        headers: {
+            'Authorization': `Bearer ${process.env.API_KEY}`
+        }
+    });
     if (!res.ok) {
         throw new Error('Failed to fetch news');
     }
